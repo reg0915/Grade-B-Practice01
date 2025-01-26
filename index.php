@@ -39,8 +39,18 @@
             </div>
 
 <?php
-include "./front/main.php";
-?>`
+// $do=(isset($_GET['do']))?$_GET['do']"main";只有是isset的三元運算式才能簡寫成下面的方式
+$do =$_GET['do']??'main'; 
+$file="./front/{$do}.php";
+if(file_exists($file)){
+    include $file;
+}else{
+    include "./front/main.php";
+}
+
+// file_exists($file)三元運算式簡寫後如下
+// include(file_exists($file))?$file:"./front/main.php";
+?>
 
 
 
