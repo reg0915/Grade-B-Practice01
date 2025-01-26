@@ -1,3 +1,5 @@
+
+
 <h3 class="cent">新增標題區圖片</h3>
 <hr><form action="api/insert_title.php" method="post" enctype="multipart/from-data">
     <table>
@@ -13,7 +15,6 @@
     <div class="cent">
         <input type="submit" value="新增">
         <input type="reset" value="重置">
-
-        
+       
     </div>
 </form>
