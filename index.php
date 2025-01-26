@@ -40,7 +40,7 @@
 
 <?php
 include "./front/main.php";
-?>
+?>`
 
 
 
