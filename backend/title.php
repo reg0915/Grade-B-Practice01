@@ -13,7 +13,7 @@
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
         <p class="t cent botli">網站標題管理</p>
-        <form method="post" target="back" action="./api/edit_<?=$do;?>.php">
+        <form method="post"  action="./api/edit_<?=$do;?>.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">
@@ -29,12 +29,19 @@
                     ?>
                     <tr >
                         <td width="45%">
-                         <img src="/upload/<?=$row['img'];?>" alt="">   
+                        
+                        <img src="./upload/<?=$row['img'];?>" style="width:300px;height:30px;" >   
                         </td>
-                        <td width="23%"><?=$row[''];?></td>
-                        <td width="7%"> <?=$row[''];?></td>
-                        <td width="7%"> <?=$row[''];?></td>
-                        <td></td>
+                        <td width="23%"><?=$row['text'];?></td>
+                        <td width="7%">
+                            <input type="radio" name="sh" value="<?=$row['id'];?>">
+                           </td>
+                        <td width="7%">
+                            <input type="checkbox" name="del" value="<?=$row['id'];?>"> 
+                          </td>
+                        <td>
+                          <input type="button" value="更新圖片">  
+                        </td>
                     </tr>
                     <?php
                     }

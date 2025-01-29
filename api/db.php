@@ -71,6 +71,7 @@ class DB{
         return $this->pdo->exec($sql);
     }
     
+    
     function del($id){
         $sql="DELETE FROM $this->table ";
 
