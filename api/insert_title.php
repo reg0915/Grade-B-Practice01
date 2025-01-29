@@ -12,4 +12,3 @@ if(!empty($_FILES['img']['tmp_name'])){
 $Title->save($_POST);
 
 to("../admin.php?do=title");
-?>

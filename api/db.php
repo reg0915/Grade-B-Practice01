@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 class DB{
     protected $dsn="mysql:host=localhost;charset=utf8;dbname=db10";
     protected $pdo;
@@ -60,18 +58,17 @@ class DB{
             unset($array['id']);
             $set=$this->a2s($array);
             $sql ="UPDATE $this->table SET ".join(',',$set)." where `id`='$id'";
-                
+
         }else{
             //insert
             $cols=array_keys($array);
             $sql="INSERT INTO $this->table (`".join("`,`",$cols)."`) VALUES('".join("','",$array)."')";
         }
-        
+
         //echo $sql;
         return $this->pdo->exec($sql);
     }
-    
-    
+
     function del($id){
         $sql="DELETE FROM $this->table ";
 
@@ -86,7 +83,7 @@ class DB{
         return $this->pdo->exec($sql);
     }
 
-    
+
     /**
      * 把陣列轉成條件字串陣列
      */
@@ -121,7 +118,7 @@ class DB{
         //echo $sql;
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
-    
+
     /**
      * 取得多筆資料
      */
@@ -129,11 +126,11 @@ class DB{
         //echo $sql;
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
     /**
      * 方便使用各個聚合函式
      */
-    
+
      protected function math($math,$col='id',$where=[]){
         $sql="SELECT $math($col) FROM $this->table";
 
@@ -164,19 +161,3 @@ function to($url){
 
 
 $Title=new DB('titles');
-// $Ad=new DB('ads');
-// $Image=new DB('images');
-// $Mvim=new DB('mvims');
-// $News=new DB('news');
-// $Admin=new DB('admin');
-// $Menu=new DB('menus');
-// $Total=new DB('total');
-// $Bottom=new DB('bottom');
-
-
-// if(!isset($_SESSION['view'])){
-//     $_SESSION['view']=1;
-//     $total=$Total->find(1);
-//     $total['total']++;
-//     $Total->save($total);
-// }

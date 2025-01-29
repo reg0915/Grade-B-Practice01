@@ -1,7 +1,7 @@
 
 
 <h3 class="cent">新增動畫圖片</h3>
-<hr><form action="api/insert_mvim.php" method="post" enctype="multipart/from-data">
+<hr><form action="api/insert_mvim.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>動畫圖片</td>
