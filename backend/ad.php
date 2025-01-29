@@ -12,8 +12,8 @@
         </tbody>
     </table>
     <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-        <p class="t cent botli">動態文字廣告管理</p>
-        <form method="post" target="back" action="?do=tii">
+        <p class="t cent botli">動態與文字廣告管理</p>
+        <form method="post" target="back" action="./api/edit_<?=$do;?>.php">
             <table width="100%">
                 <tbody>
                     <tr class="yel">
@@ -29,9 +29,12 @@
                 <tbody>
                     <tr>
                         <td width="200px"><input type="button"
-                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;view.php?do=title&#39;)"
+                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./model/<?=$do;?>.php&#39;)"
                                 value="新增網站標題圖片"></td>
-                        <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+                        <td class="cent">
+                            <input type="submit" value="修改確定">
+                            <input type="reset" value="重置">
+                        </td>
                     </tr>
                 </tbody>
             </table>
