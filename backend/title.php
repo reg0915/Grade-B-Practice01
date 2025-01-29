@@ -23,13 +23,29 @@
                         <td width="7%">刪除</td>
                         <td></td>
                     </tr>
+                    <?php
+                    $rows=$Title->all();
+                    foreach($rows as $row){
+                    ?>
+                    <tr >
+                        <td width="45%">
+                         <img src="/upload/<?=$row['img'];?>" alt="">   
+                        </td>
+                        <td width="23%"><?=$row[''];?></td>
+                        <td width="7%"> <?=$row[''];?></td>
+                        <td width="7%"> <?=$row[''];?></td>
+                        <td></td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
                         <td width="200px"><input type="button"
-                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./model/<?=$do;?>.php&#39;)"
+                                onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php&#39;)"
                                 value="新增網站標題圖片"></td>
                         <td class="cent">
                             <input type="submit" value="修改確定">
