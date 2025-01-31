@@ -32,7 +32,7 @@
                         <img src="./upload/<?=$row['img'];?>" style="width:300px;height:30px;" >   
                         </td>
                         <td>
-                            <input type="text" name="text[]" value=" <?=$row['text'];?>">
+                            <input type="text" name="text[]" value="<?=$row['text'];?>">
                            </td>
                         <td>
                             <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked': '' ;?>>
@@ -41,7 +41,9 @@
                             <input type="checkbox" name="del[]" value="<?=$row['id'];?>"> 
                           </td>
                         <td>
-                          <input type="button" value="更新圖片">  
+                          <input type="button"   
+                          onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/upload_<?=$do;?>.php?id=<?=$row['id'];?>&#39;)"
+                          value="更新圖片">  
                         </td>
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
@@ -53,7 +55,8 @@
             <table style="margin-top:40px; width:70%;">
                 <tbody>
                     <tr>
-                        <td width="200px"><input type="button"
+                        <td width="200px">
+                            <input type="button"
                                 onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;./modal/<?=$do;?>.php&#39;)"
                                 value="新增網站標題圖片"></td>
                         <td class="cent">
