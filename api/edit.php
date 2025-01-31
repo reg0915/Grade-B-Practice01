@@ -5,21 +5,23 @@ include_once "db.php";
 
 
 
+$table=trim($_POST['table']);
 
 
 
-$table=$_POST['table'];
 
 
 
-echo $table;
+// echo $table;
+// $db=ucfirst($table);
+// echo $db;
+// dd($table);
+
 $db=ucfirst($table);
-echo $db;
-dd($table);
-
-$db=ucfirst($table);
 
 
+var_dump($Title);
+var_dump($$db);
 
 if(isset($_POST['id'])){
     foreach($_POST['id'] as $idx => $id){
@@ -44,14 +46,16 @@ case "admin":
 
 
         $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
-        $row['text']=$_POST['text'][$idx];
+        if(isset($_POST['text'])){
+
+            $row['text']=$_POST['text'][$idx];
+        }
     
 
         }
     
         $$db->save($row);
 
-        echo "$_POST";
        }
     }
 }
